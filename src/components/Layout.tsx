@@ -2,7 +2,7 @@ import { Box, Card } from '@react-bulk/web';
 import Sidebar from './Sidebar';
 import Header from './Header';
 
-export default function Layout({ children }: any) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Box minh="100vh">
@@ -10,13 +10,13 @@ export default function Layout({ children }: any) {
           <Header />
         </Card>
         <Box row noWrap flex>
-          <Box w={280}>
+          <Box>
             <Card flex m={3} mr={0}>
               <Sidebar />
             </Card>
           </Box>
           <Box flex>
-            <Card flex m={3}>
+            <Card bg="#e3e3e3" flex>
               {children}
             </Card>
           </Box>

@@ -6,10 +6,11 @@ import { SessionProvider, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { Loading } from '@react-bulk/web';
 import Layout from '../src/components/Layout';
+import main from '../src/themes/main';
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
-    <ReactBulk theme={dark}>
+    <ReactBulk theme={main}>
       <SessionProvider session={session}>
         {
           // @ts-ignore
