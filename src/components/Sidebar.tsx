@@ -1,9 +1,11 @@
 import { signOut } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
-import { Animation, Box, Button } from '@react-bulk/web';
+import { Box, Button } from '@react-bulk/web';
 
-import Navigation from './Navigation';
+import { UiNavigationProps } from '../utils/types';
+
+import { UiNavigation } from '.';
 
 export default function Sidebar() {
   const [isMobile, setIsMobile] = useState(false);
@@ -21,7 +23,7 @@ export default function Sidebar() {
     };
   }, []);
 
-  const menus = [
+  const menus: UiNavigationProps[] = [
     {
       title: 'Atividade Complementar',
       href: '/atividade',
@@ -41,17 +43,13 @@ export default function Sidebar() {
     { title: 'Serviço de Atenção ao Aluno', href: '/servico-atencao', icon: 'Megaphone' },
   ];
 
-  const fromAnimation = isMobile ? 290 : 50;
-  const toWidth = isMobile ? 50 : 290;
-
   return (
-    <Box h="100%" w={toWidth} style={{ overflow: 'hidden' }}>
-      <Animation in mh={'auto'} speed={1000} from={{ width: fromAnimation }} to={{ width: toWidth }}>
-        {menus.map((menu, key) => {
-          return <Navigation key={key} {...menu} />;
-        })}
-      </Animation>
-      <Button mt={'auto'} mb={1} mh={3} onPress={signOut}>
+    <Box h="100%" w={isMobile ? 50 : 290} style={{ overflow: 'hidden' }}>
+      {menus.map((menu, key) => {
+        return <UiNavigation key={key} {...menu} />;
+      })}
+
+      <Button mt={'auto'} mb={1} onPress={signOut}>
         Logout
       </Button>
     </Box>
