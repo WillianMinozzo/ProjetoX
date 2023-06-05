@@ -1,27 +1,16 @@
 import { signOut } from 'next-auth/react';
-import { useEffect, useState } from 'react';
+
+import { SignOut } from '@phosphor-icons/react';
 
 import { Box, Button } from '@react-bulk/web';
 
 import { UiNavigationProps } from '../utils/types';
 
 import { UiNavigation } from '.';
+import useIsMobile from '../hooks/useIsMobile';
 
 export default function Sidebar() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 800);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const isMobile = useIsMobile();
 
   const menus: UiNavigationProps[] = [
     {
@@ -49,9 +38,13 @@ export default function Sidebar() {
         return <UiNavigation key={key} {...menu} />;
       })}
 
-      <Button mt={'auto'} mb={1} onPress={signOut}>
-        Logout
-      </Button>
+      <Button
+        startAddon={<SignOut size={24} color="white" />}
+        mt={'auto'}
+        mb={1}
+        onPress={signOut}
+        label={!isMobile ? 'Logout' : ''}
+      ></Button>
     </Box>
   );
 }

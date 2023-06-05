@@ -1,10 +1,12 @@
-import { Box, Button, Divider, Text } from '@react-bulk/web';
 import { FileText } from '@phosphor-icons/react';
+
+import { Box, Button, Divider, Text } from '@react-bulk/web';
+
 import UiTitle from '../../src/components/UiTitle';
 
 export default function Page({ children }: any) {
   return (
-    <Box bg="white" h="100%" w="70%" corners={2} ml="10%">
+    <Box formSingle>
       <UiTitle icon={<FileText size={40} />} title="Atividade Complementar" subtitle="Aqui estão suas atividades complementares." />
       <Box row justifyContent="space-between" p={3}>
         <Box>

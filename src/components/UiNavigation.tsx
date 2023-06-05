@@ -8,8 +8,11 @@ import { Button } from '@react-bulk/web';
 
 import { UiNavigationProps } from '../utils/types';
 
+import useIsMobile from '../hooks/useIsMobile';
+
 export default function UiNavigation(props: UiNavigationProps) {
   const theme = useTheme();
+  const isMobile = useIsMobile();
 
   const pathName = usePathname();
   const isActive = props.href && pathName.startsWith(props.href);
@@ -30,7 +33,7 @@ export default function UiNavigation(props: UiNavigationProps) {
       justifyContent="flex-start"
       {...props}
     >
-      {props.title}
+      {!isMobile && props.title}
     </Button>
   );
 }

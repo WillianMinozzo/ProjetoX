@@ -1,10 +1,6 @@
 import { ThemeOptionalProps } from '@react-bulk/core';
-import { inspect } from 'util';
-import colors = module;
 
 const main: ThemeOptionalProps = {
-  mode: 'main',
-
   colors: {
     primary: '#a73866',
     light: '#dc6894',
@@ -20,9 +16,31 @@ const main: ThemeOptionalProps = {
       defaultProps: {
         corners: 3,
       },
-    } as any,
-    Button: {
-      selected: colors.lighter,
+      variants: {
+        red: {
+          true: {
+            root: {
+              backgroundColor: 'red',
+            },
+          },
+        },
+      },
+    },
+
+    Box: {
+      variants: {
+        formSingle: {
+          true: {
+            root: {
+              backgroundColor: 'white',
+              height: '100%',
+              width: '70%',
+              corners: 2,
+              marginLeft: '10%',
+            },
+          },
+        },
+      },
     },
   } as any,
 };

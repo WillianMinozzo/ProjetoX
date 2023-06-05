@@ -1,10 +1,12 @@
-import { Box, Divider, Text } from '@react-bulk/web';
 import { Books } from '@phosphor-icons/react';
+
+import { Box, Divider, Text } from '@react-bulk/web';
+
 import UiTitle from '../../src/components/UiTitle';
 
 export default function Page() {
   return (
-    <Box bg="white" h="100%" w="70%" corners={2} ml="10%">
+    <Box formSingle>
       <UiTitle title="Bibliotecas Digitais" icon={<Books size={35} />} />
       <Box p={3}>
         <Text>

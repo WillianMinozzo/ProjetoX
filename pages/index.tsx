@@ -1,4 +1,4 @@
-import { CalendarBlank, GraduationCap } from '@phosphor-icons/react';
+import { Alien, Bell, Books, CalendarBlank, GraduationCap } from '@phosphor-icons/react';
 
 import { useTheme } from '@react-bulk/core';
 import { Box, Button, Card, Grid, Image, Scrollable, Text } from '@react-bulk/web';
@@ -8,35 +8,55 @@ export default function Home() {
 
   return (
     <Grid h={'100%'} xs={12} rounded>
-      <Box bg="white" border="1px solid red" xl={8} md={12} sm={12} corners={2}>
-        <Box h={300} border="1px solid purple">
+      <Box bg="white" xl={8} md={12} sm={12} corners={2}>
+        <Box h={400}>
           <Image
             alt="Uny"
             source="https://cdn-static.unyleya.xyz/manutencao/upload/esquemaconfiguracao/esquema_configuracao_15e9601632c9f9.jpeg"
           />
         </Box>
-        <Grid xs={12} border="1px solid green">
-          <Box minh={'100px'} xl={6} md={12} sm={12} border="1px solid blue">
-            Ambientação
+        <Grid xs={12} style={{ marginTop: 12, xl: { 'margin-top': 0 } }}>
+          <Box minh={'100px'} xl={6} md={12} sm={12}>
+            <Box p={3} bg={theme.color('lighter')} row justifyContent="space-between">
+              <Box align="center">
+                <Text bold>Ambientação</Text>
+              </Box>
+              <Box>
+                <Alien size={32} />
+              </Box>
+            </Box>
           </Box>
-          <Scrollable minh={'100px'} xl={6} md={12} sm={12} border="1px solid red">
-            <Card bg={theme.color('primary')}>
+          <Scrollable style={{ borderLeft: 1 }} minh={'100px'} xl={6} md={12} sm={12}>
+            <Box p={3} bg={theme.color('lighter')} row justifyContent="space-between">
+              <Box align="center">
+                <Text bold>Avisos</Text>
+              </Box>
+              <Box>
+                <Bell size={32} />
+              </Box>
+            </Box>
+            <Card>
               <Box row noWrap>
-                <Box color="white">{<GraduationCap size={32} />}</Box>
+                <Box>{<GraduationCap size={32} />}</Box>
                 <Box ml={3}>
                   <Text bold>Diplomacao</Text>
-                  <Text>Conheça o passo a passo para emissão do seu diploma!</Text>
+                  <Text size={0.8}>Conheça o passo a passo para emissão do seu diploma!</Text>
                 </Box>
               </Box>
             </Card>
           </Scrollable>
         </Grid>
       </Box>
-      <Box xl={4} md={12} sm={12} border>
-        <Scrollable bg="white" corners={2} style={{ marginLeft: 0, xl: { 'margin-left': '12px' } }}>
-          <Text bold center mt={3}>
-            Disciplinas
-          </Text>
+      <Box xl={4} md={12} sm={12}>
+        <Scrollable bg="white" corners={2} style={{ marginLeft: 0, marginTop: 12, xl: { marginLeft: 12, marginTop: 0 } }}>
+          <Box p={3} bg={theme.color('lighter')} row justifyContent="space-between">
+            <Box align="center">
+              <Text bold>Disciplinas</Text>
+            </Box>
+            <Box>
+              <Books size={32} />
+            </Box>
+          </Box>
           <Card bg="#f9f2f5" mt={3}>
             <Text>Nome da disciplina</Text>
             <Text mt={1}>Professor:</Text>
