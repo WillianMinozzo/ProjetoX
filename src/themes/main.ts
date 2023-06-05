@@ -1,6 +1,8 @@
-import { ThemeOptionalProps } from '@react-bulk/core';
+import { ThemeEditProps } from '@react-bulk/core';
 
-const main: ThemeOptionalProps = {
+import components from './components';
+
+const main: ThemeEditProps = {
   colors: {
     primary: '#a73866',
     light: '#dc6894',
@@ -11,38 +13,7 @@ const main: ThemeOptionalProps = {
     white: '#ffffff',
   } as any,
 
-  components: {
-    Card: {
-      defaultProps: {
-        corners: 3,
-      },
-      variants: {
-        red: {
-          true: {
-            root: {
-              backgroundColor: 'red',
-            },
-          },
-        },
-      },
-    },
-
-    Box: {
-      variants: {
-        formSingle: {
-          true: {
-            root: {
-              backgroundColor: 'white',
-              height: '100%',
-              width: '70%',
-              corners: 2,
-              marginLeft: '10%',
-            },
-          },
-        },
-      },
-    },
-  } as any,
+  components: { ...components },
 };
 
 export default main;

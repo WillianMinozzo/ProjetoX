@@ -170,19 +170,19 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
-"@react-bulk/core@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@react-bulk/core/-/core-0.3.1.tgz#126f64f4d15eaa621ebea9e06359bfd6e75a3701"
-  integrity sha512-w3rL7lvesbbJPxawO01pCZuqZcV5acdukGDlXCNEHvugLrp0kF6Y81/bT8sKKMWkv7RdBPYF5gVw113qNTp2BA==
+"@react-bulk/core@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@react-bulk/core/-/core-0.3.2.tgz#7623b9cb3c342178237953cfc934b3a2e863b9e2"
+  integrity sha512-NjHpl7Z+/Rnc+uybYvWYwbkQKc3ZFWKVpaRLtwSKs2x4ZNU01NI2IB8MBSZx8ycoEhqx2mTcCSfj4YeMH8k6hg==
   dependencies:
     deepmerge ">=3.0.0"
 
-"@react-bulk/web@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@react-bulk/web/-/web-0.3.1.tgz#7cca4e4ad8ca7c465e8acd43fc39a75f6b86839d"
-  integrity sha512-h8oWQX4Irohl/MBUGygXOlgBY/XsBz5WRFwFKI35rR9IBoEOm13B+qkqF9PKm+hhMmBaTIjXTQjC6GLoM71Cpg==
+"@react-bulk/web@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@react-bulk/web/-/web-0.3.2.tgz#ba5e9e435d2336ee11b3446dc869e512c0b342f9"
+  integrity sha512-Fbh3+UJ7xaGkX2PJ1WPBwvFhaB5k6hgLQgD/CMkFxfxdIfb7iWphMFVxbaY0/QBJPX0GhjZ9wn57kWVN3mC7zQ==
   dependencies:
-    "@react-bulk/core" "^0.3.1"
+    "@react-bulk/core" "^0.3.2"
 
 "@rushstack/eslint-patch@^1.1.3":
   version "1.2.0"

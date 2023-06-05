@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.9",
-    "@react-bulk/core": "^0.3.1",
-    "@react-bulk/web": "^0.3.1",
+    "@react-bulk/core": "^0.3.2",
+    "@react-bulk/web": "^0.3.2",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",

@@ -1,6 +1,6 @@
 import { FileText } from '@phosphor-icons/react';
 
-import { Box, Button, Divider, Text } from '@react-bulk/web';
+import { Box, Button, Text } from '@react-bulk/web';
 
 import UiTitle from '../../src/components/UiTitle';
 

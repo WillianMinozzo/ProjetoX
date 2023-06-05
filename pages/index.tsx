@@ -7,7 +7,7 @@ export default function Home() {
   const theme = useTheme();
 
   return (
-    <Grid h={'100%'} xs={12} rounded>
+    <Grid h="100%" xs={12} rounded>
       <Box bg="white" xl={8} md={12} sm={12} corners={2}>
         <Box h={400}>
           <Image
@@ -16,7 +16,7 @@ export default function Home() {
           />
         </Box>
         <Grid xs={12} style={{ marginTop: 12, xl: { 'margin-top': 0 } }}>
-          <Box minh={'100px'} xl={6} md={12} sm={12}>
+          <Box minh="100px" xl={6} md={12} sm={12}>
             <Box p={3} bg={theme.color('lighter')} row justifyContent="space-between">
               <Box align="center">
                 <Text bold>Ambientação</Text>
