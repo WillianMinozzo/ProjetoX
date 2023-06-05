@@ -1,5 +1,3 @@
-import { Books } from '@phosphor-icons/react';
-
 import { Box, Divider, Text } from '@react-bulk/web';
 
 import UiTitle from '../../src/components/UiTitle';
@@ -7,7 +5,7 @@ import UiTitle from '../../src/components/UiTitle';
 export default function Page() {
   return (
     <Box formSingle>
-      <UiTitle title="Bibliotecas Digitais" icon={<Books size={35} />} />
+      <UiTitle title="Bibliotecas Digitais" icon={'Books'} />
       <Box p={3}>
         <Text>
           A Unyleya Educacional libera aos seus alunos, <Text bold>sem custo adicional</Text>, o acesso às Bibliotecas Digitais, para

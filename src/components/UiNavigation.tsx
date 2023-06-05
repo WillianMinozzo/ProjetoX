@@ -6,6 +6,7 @@ import * as Icons from '@phosphor-icons/react';
 import { useTheme } from '@react-bulk/core';
 import { Button } from '@react-bulk/web';
 
+import IconCustom from '../utils/helper';
 import { UiNavigationProps } from '../utils/types';
 
 import useIsMobile from '../hooks/useIsMobile';
@@ -20,15 +21,11 @@ export default function UiNavigation(props: UiNavigationProps) {
   const typeButton = isActive ? 'solid' : 'text';
   const colorIcon = isActive ? 'white' : theme.color('primary');
 
-  const IconCustom = Object.entries(Icons).find(([name]) => {
-    return name === props.icon;
-  })?.[1] as Icons.Icon;
-
+  const Icon = IconCustom(props.icon);
   return (
     <Button
       component={NextLink}
-      href={props.href}
-      startAddon={IconCustom && <IconCustom size={24} color={colorIcon} />}
+      startAddon={Icon && <Icon size={24} color={colorIcon} />}
       variant={typeButton}
       justifyContent="flex-start"
       {...props}
