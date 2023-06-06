@@ -27,16 +27,20 @@ export default function Page() {
         </Text>
       </Box>
 
-      <Grid p={3}>
+      <Grid xs={12} p={3} style={{ overflow: 'hidden' }}>
         <Box>
-          <Card position="relative" style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.6)' }}>
-            <Text>Redação Oficial</Text>
-            <Text>20h</Text>
-            <Image w={300} source="projeto_pedagogico.jpeg" />
-            <Box center position="absolute" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
-              <Button size="small">Matricule-se Gratis</Button>
+          {Array.from({ length: 2 }).map((i, index) => (
+            <Box key={index}>
+              <Card position="relative" style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.6)' }}>
+                <Text>Redação Oficial</Text>
+                <Text>20h</Text>
+                <Image w={300} source="projeto_pedagogico.jpeg" />
+                <Box center position="absolute" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
+                  <Button size="small">Matricule-se Gratis</Button>
+                </Box>
+              </Card>
             </Box>
-          </Card>
+          ))}
         </Box>
       </Grid>
     </Box>
