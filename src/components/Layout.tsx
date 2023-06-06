@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </Card>
         <Box row noWrap flex>
           <Box>
-            <Card flex m={3} mr={0} p={0}>
+            <Card maxh={960} flex m={3} mr={0} p={0}>
               <Sidebar />
             </Card>
           </Box>
