@@ -1,5 +1,7 @@
 import { Box } from '@react-bulk/web';
 
+import { UiTitle } from '../../src/components';
+
 export default function Page() {
-  return <Box>Indique e Ganhe</Box>;
+  return <UiTitle icon="WechatLogo" title="Indique e Ganhe" />;
 }

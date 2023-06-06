@@ -1,5 +1,7 @@
 import { Box } from '@react-bulk/web';
 
+import { UiTitle } from '../../src/components';
+
 export default function Page() {
-  return <Box>Office 365</Box>;
+  return <UiTitle icon="SquaresFour" title="Office365" />;
 }
