@@ -2,11 +2,11 @@ import NextLink from 'next/link';
 
 import { Box, Button } from '@react-bulk/web';
 
-import { UiTitle } from '../../src/components';
+import { FormSingle, UiTitle } from '../../src/components';
 
 export default function Page() {
   return (
-    <Box>
+    <FormSingle>
       <UiTitle
         icon="CurrencyCircleDollar"
         title="Financeiro"
@@ -17,6 +17,6 @@ export default function Page() {
           ir para negociacao
         </Button>
       </Box>
-    </Box>
+    </FormSingle>
   );
 }

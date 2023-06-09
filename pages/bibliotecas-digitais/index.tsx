@@ -1,10 +1,11 @@
 import { Box, Divider, Text } from '@react-bulk/web';
 
+import FormSingle from '../../src/components/FormSingle';
 import UiTitle from '../../src/components/UiTitle';
 
 export default function Page() {
   return (
-    <Box formSingle>
+    <FormSingle>
       <UiTitle title="Bibliotecas Digitais" icon={'Books'} />
       <Box p={3}>
         <Text>
@@ -22,6 +23,6 @@ export default function Page() {
         <Text>100% online</Text>
         <Text ml={3}>Disponível 24h</Text>
       </Box>
-    </Box>
+    </FormSingle>
   );
 }

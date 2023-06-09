@@ -2,7 +2,7 @@ import { Box, Button, Text } from '@react-bulk/web';
 
 import { FormSingle, UiTitle } from '../../src/components';
 
-export default function Page({ children }: any) {
+export default function Page() {
   return (
     <FormSingle>
       <UiTitle icon="FileText" title="Atividade Complementar" subtitle="Aqui estão suas atividades complementares." />
