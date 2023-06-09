@@ -1,18 +1,17 @@
 import { useState } from 'react';
 
 import { useTheme } from '@react-bulk/core';
-import { Box, Tabs, ButtonGroup, Image, Card, Text, Divider, Grid, Input, Select } from '@react-bulk/web';
+import { Box, Card, Divider, Grid, Image, Input, Select, Tabs, Text } from '@react-bulk/web';
 
-import UiTitle from '../../src/components/UiTitle';
+import { FormSingle, UiTitle } from '../../src/components';
 
 export default function Page() {
   const theme = useTheme();
 
   const [tab, setTab] = useState(0);
 
-  // @ts-ignore
   return (
-    <Box formSingle>
+    <FormSingle>
       <UiTitle
         icon="UserCircle"
         title="Meus Dados"
@@ -41,8 +40,9 @@ export default function Page() {
       </Box>
       <Card p={0} pl={3}>
         <Tabs
+          color="primary"
           variant="group"
-          onChange={(e, newValue) => setTab(newValue)}
+          onChange={(e, newValue) => setTab(+newValue)}
           value={tab}
           tabs={[{ label: 'Meus Dados' }, { label: 'Trocar Senha' }]}
         />
@@ -103,6 +103,6 @@ export default function Page() {
           Trocar senha
         </Box>
       )}
-    </Box>
+    </FormSingle>
   );
 }

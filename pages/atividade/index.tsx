@@ -1,10 +1,10 @@
 import { Box, Button, Text } from '@react-bulk/web';
 
-import UiTitle from '../../src/components/UiTitle';
+import { FormSingle, UiTitle } from '../../src/components';
 
 export default function Page({ children }: any) {
   return (
-    <Box formSingle>
+    <FormSingle>
       <UiTitle icon="FileText" title="Atividade Complementar" subtitle="Aqui estão suas atividades complementares." />
       <Box row justifyContent="space-between" p={3}>
         <Box>
@@ -16,6 +16,6 @@ export default function Page({ children }: any) {
           <Button variant="outline">Cadastrar Atividade Completar</Button>
         </Box>
       </Box>
-    </Box>
+    </FormSingle>
   );
 }

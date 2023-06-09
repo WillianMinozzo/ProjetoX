@@ -1,28 +1,28 @@
-import { Box, Card } from '@react-bulk/web';
+import { Box, Card, Scrollable, useDimensions } from '@react-bulk/web';
 
+import useIsMobile from '../hooks/useIsMobile';
+import { PagesProps } from '../utils/types';
 import Header from './Header';
 import Sidebar from './Sidebar';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: PagesProps) {
+  const dimension = useDimensions();
+  const isMobile = useIsMobile();
   return (
-    <>
-      <Box minh="100vh">
-        <Card m={3} mb={0}>
-          <Header />
+    <Box>
+      <Card m={3} mb={0} h={80} center>
+        <Header />
+      </Card>
+      <Box row noWrap h={dimension.height - 120} m={3}>
+        <Card mr={0} p={0} w={isMobile ? 50 : 290}>
+          <Scrollable>
+            <Sidebar />
+          </Scrollable>
         </Card>
-        <Box row noWrap flex>
-          <Box>
-            <Card maxh={960} flex m={3} mr={0} p={0}>
-              <Sidebar />
-            </Card>
-          </Box>
-          <Box flex>
-            <Card bg="#e3e3e3" flex>
-              {children}
-            </Card>
-          </Box>
+        <Box flex ml={3}>
+          <Scrollable bg="#e3e3e3">{children}</Scrollable>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }

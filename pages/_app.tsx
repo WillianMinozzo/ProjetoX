@@ -1,14 +1,14 @@
-import '../styles/globals.css';
 import { SessionProvider, useSession } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
+import '../styles/globals.css';
 
 import ReactBulk from '@react-bulk/core';
 import { Loading } from '@react-bulk/web';
 
-import Layout from '../src/components/Layout';
-import dark from '../src/themes/dark';
+import { Layout } from '../src/components';
 import main from '../src/themes/main';
+import { PagesProps } from '../src/utils/types';
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
@@ -31,16 +31,17 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
   );
 }
 
-function Auth({ children }: any) {
+function Auth({ children }: PagesProps): JSX.Element {
   const router = useRouter();
   const { status } = useSession();
 
   if (status === 'unauthenticated') {
     router.push('/login');
+    return <></>;
   }
 
   if (status === 'authenticated') {
-    return children;
+    return <>{children}</>;
   }
 
   return <Loading h="100vh" />;

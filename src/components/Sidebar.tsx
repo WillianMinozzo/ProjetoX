@@ -33,7 +33,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <Box h="100%" w={isMobile ? 50 : 290} style={{ overflow: 'hidden' }}>
+    <Box h="100%" style={{ overflow: 'hidden' }}>
       {menus.map((menu, key) => {
         return <UiNavigation key={key} {...menu} />;
       })}

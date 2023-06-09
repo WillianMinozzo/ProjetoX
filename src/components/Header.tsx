@@ -1,18 +1,19 @@
-import { Box, Button, Grid, Image, Text } from '@react-bulk/web';
+import { Box, Grid, Image, Text, useDimensions } from '@react-bulk/web';
 import NextLink from 'next/link';
 
 export default function Header() {
+  const dimension = useDimensions();
   return (
-    <Grid justifyContent="space-between" size={12} row noWrap w="100%" h="100%" maxh={60}>
-      <Box maxw={130} component={NextLink} href="/" mt={3} xs={4} h={50}>
-        <Image w={120} source="/logo.png" />
+    <Grid row noWrap justifyItems="center" alignItems="center">
+      <Box w={130} maxh={60} component={NextLink} href="/">
+        <Image source="/logo.png" mode="contain" />
       </Box>
-
-      <Box row noWrap xs={4} maxw={350} alignItems="end" style={{ overflow: 'hidden' }}>
+      <Box row noWrap w={dimension.width - 200} alignItems="end" justifyContent="end" style={{ overflow: 'hidden', float: 'right' }}>
+        <Box>Serviço de Atenção</Box>
         <Box align="center">
-          <Image circular source="perfil.jpg" w={50} h={50} />
+          <Image circular source="perfil.jpg" w={50} />
         </Box>
-        <Box align="center">
+        <Box align="center" maxw={200}>
           <Text>Nome:José Alves Da silva nunca morre</Text>
           <Text>E-mail: 2888360@manutencao.unyleya.xyz</Text>
         </Box>

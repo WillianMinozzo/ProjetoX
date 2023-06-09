@@ -1,8 +1,6 @@
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import * as Icons from '@phosphor-icons/react';
-
 import { useTheme } from '@react-bulk/core';
 import { Button } from '@react-bulk/web';
 
@@ -12,16 +10,17 @@ import { UiNavigationProps } from '../utils/types';
 import useIsMobile from '../hooks/useIsMobile';
 
 export default function UiNavigation(props: UiNavigationProps) {
+  const { href, icon, title } = props;
   const theme = useTheme();
   const isMobile = useIsMobile();
 
   const pathName = usePathname();
-  const isActive = props.href && pathName.startsWith(props.href);
+  const isActive = href && pathName.startsWith(href);
 
   const typeButton = isActive ? 'solid' : 'text';
   const colorIcon = isActive ? 'white' : theme.color('primary');
 
-  const Icon = IconCustom(props.icon);
+  const Icon = IconCustom(icon);
   return (
     <Button
       component={NextLink}
@@ -30,7 +29,7 @@ export default function UiNavigation(props: UiNavigationProps) {
       justifyContent="flex-start"
       {...props}
     >
-      {!isMobile && props.title}
+      {!isMobile && title}
     </Button>
   );
 }

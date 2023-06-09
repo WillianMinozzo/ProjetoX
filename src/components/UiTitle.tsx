@@ -2,14 +2,10 @@ import { useTheme } from '@react-bulk/core';
 import { Box, Divider, Grid, Text } from '@react-bulk/web';
 
 import IconCustom from '../utils/helper';
+import { UiTitleProps } from '../utils/types';
 
-interface UiTitleProps {
-  title: string;
-  subtitle?: string;
-  icon?: string;
-}
-
-export default function UiTitle({ title, subtitle, icon }: UiTitleProps) {
+export default function UiTitle(props: UiTitleProps) {
+  const { title, subtitle, icon, divider = true } = props;
   const Icon = IconCustom(icon);
   const theme = useTheme();
   return (
@@ -23,7 +19,7 @@ export default function UiTitle({ title, subtitle, icon }: UiTitleProps) {
           {Boolean(subtitle) && <Text variant="h8">{subtitle}</Text>}
         </Box>
       </Grid>
-      <Divider mx={3} />
+      {Boolean(divider) && <Divider mx={3} />}
     </>
   );
 }
