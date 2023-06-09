@@ -1,7 +1,3 @@
-import { ReactNode } from 'react';
-
-import { Books } from '@phosphor-icons/react';
-
 import { useTheme } from '@react-bulk/core';
 import { Box, Divider, Grid, Text } from '@react-bulk/web';
 

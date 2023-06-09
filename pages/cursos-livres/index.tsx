@@ -1,10 +1,11 @@
 import { Box, Button, Card, Divider, Grid, Image, Text } from '@react-bulk/web';
 
 import { UiTitle } from '../../src/components';
+import FormSingle from '../../src/components/FormSingle';
 
 export default function Page() {
   return (
-    <Box formSingle>
+    <FormSingle>
       <UiTitle icon="BookOpen" title="Cursos Livres" />
       <Box p={3}>
         <Text size={0.9}>
@@ -33,14 +34,15 @@ export default function Page() {
             <Card position="relative" style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.6)' }}>
               <Text>Redação Oficial</Text>
               <Text>20h</Text>
+
               <Image style={{ overflow: 'hidden' }} maxw={300} source="projeto_pedagogico.jpeg" />
-              <Box center position="absolute" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
+              <Box center position="absolute" style={{ top: 30, left: 0, right: 0, bottom: 0 }}>
                 <Button size="small">Matricule-se Gratis</Button>
               </Box>
             </Card>
           </Box>
         ))}
       </Grid>
-    </Box>
+    </FormSingle>
   );
 }

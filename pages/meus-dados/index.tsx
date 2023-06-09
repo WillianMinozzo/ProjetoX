@@ -1,36 +1,108 @@
-import { Box, Button, ButtonGroup, Image, Text } from '@react-bulk/web';
-import { useTheme } from '@react-bulk/core';
-import UiTitle from '../../src/components/UiTitle';
-import { UserCircle } from '@phosphor-icons/react';
 import { useState } from 'react';
-import { set } from 'zod';
+
+import { useTheme } from '@react-bulk/core';
+import { Box, Tabs, ButtonGroup, Image, Card, Text, Divider, Grid, Input, Select } from '@react-bulk/web';
+
+import UiTitle from '../../src/components/UiTitle';
 
 export default function Page() {
   const theme = useTheme();
 
-  const [tab, setTab] = useState(true);
+  const [tab, setTab] = useState(0);
+
   // @ts-ignore
   return (
-    <Box bg="white" h="100%" w="70%" corners={2} ml="10%">
+    <Box formSingle>
       <UiTitle
-        icon={<UserCircle size={40} />}
+        icon="UserCircle"
         title="Meus Dados"
         subtitle="Mantenha seus dados sempre atualizados. Para alterar os dados não editáveis nesta tela,envie os documentos comprobatórios pelo Serviço de Atenção."
       />
-      <Box m={3}>
-        <Image source="/perfil.jpg" w={100} h={100} circular></Image>
+      <Box row style={{ overflow: 'hidden' }}>
+        <Box m={3}>
+          <Image source="/perfil.jpg" w={100} h={100} circular></Image>
+        </Box>
+        <Box row align="center">
+          <Box ml={3}>
+            <Text>Matricula: 6969696969</Text>
+            <Text>Nome Completo: jose da silva pereira</Text>
+            <Text>Nome Social</Text>
+          </Box>
+
+          <Box ml={3}>
+            <Text>CPF</Text>
+            <Box row>
+              <Text>Documento de Identificação</Text>
+              <Text>Orgão Emissor</Text>
+            </Box>
+            <Text>E-mail</Text>
+          </Box>
+        </Box>
       </Box>
-      <Box>
-        <ButtonGroup>
-          <Button variant="outline" onPress={() => setTab(true)}>
-            Dados pessoais
-          </Button>
-          <Button variant="outline" onPress={() => setTab(false)}>
-            Alterar Minha Senha
-          </Button>
-        </ButtonGroup>
-      </Box>
-      {tab ? <Box>Dados</Box> : <Box>Trocar senha</Box>}
+      <Card p={0} pl={3}>
+        <Tabs
+          variant="group"
+          onChange={(e, newValue) => setTab(newValue)}
+          value={tab}
+          tabs={[{ label: 'Meus Dados' }, { label: 'Trocar Senha' }]}
+        />
+      </Card>
+      {tab === 0 && (
+        <Box p={3} borderTop="1px solid primary">
+          <Text bold>Endereço Residencial</Text>
+          <Divider mt={3} />
+          <Grid mt={3} gap={3}>
+            <Box>
+              <Input label="CEP" />
+            </Box>
+            <Box>
+              <Input label="Endereço" />
+            </Box>
+            <Box>
+              <Input label="Número" />
+            </Box>
+            <Box>
+              <Input label="Complemento" />
+            </Box>
+            <Box maxw={300}>
+              <Select
+                label="UF"
+                options={[
+                  { value: 1, label: 'Rio' },
+                  { value: 2, label: 'Sao Paulo' },
+                ]}
+              />
+            </Box>
+            <Box>
+              <Select
+                label="Cidade"
+                options={[
+                  { value: 1, label: 'Caxias' },
+                  { value: 2, label: 'Sao Joao de meriti' },
+                ]}
+              />
+            </Box>
+            <Box>
+              <Input label="Bairro" />
+            </Box>
+            <Box>
+              <Select
+                label="País"
+                options={[
+                  { value: 1, label: 'Brasil' },
+                  { value: 2, label: 'Estados Unidos' },
+                ]}
+              />
+            </Box>
+          </Grid>
+        </Box>
+      )}
+
+      {tab === 1 && (
+        <Box borderTop="1px solid primary" p={3}>
+          Trocar senha
+        </Box>
+      )}
     </Box>
   );
 }
