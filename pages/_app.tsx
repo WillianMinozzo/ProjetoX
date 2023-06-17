@@ -6,9 +6,10 @@ import '../styles/globals.css';
 import ReactBulk from '@react-bulk/core';
 import { Loading } from '@react-bulk/web';
 
+import { PagesProps } from '../src/utils/types';
+
 import { Layout } from '../src/components';
 import main from '../src/themes/main';
-import { PagesProps } from '../src/utils/types';
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (

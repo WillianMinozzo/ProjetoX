@@ -1,7 +1,8 @@
 import { Box, Card, Scrollable, useDimensions } from '@react-bulk/web';
 
-import useIsMobile from '../hooks/useIsMobile';
 import { PagesProps } from '../utils/types';
+
+import useIsMobile from '../hooks/useIsMobile';
 import Header from './Header';
 import Sidebar from './Sidebar';
 
@@ -20,7 +21,7 @@ export default function Layout({ children }: PagesProps) {
           </Scrollable>
         </Card>
         <Box flex ml={3}>
-          <Scrollable bg="#e3e3e3">{children}</Scrollable>
+          {children}
         </Box>
       </Box>
     </Box>

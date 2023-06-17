@@ -3,12 +3,12 @@ import { ReactNode } from 'react';
 import { ButtonProps } from '@react-bulk/core';
 
 export type PagesProps = {
-  children?: ReactNode;
+  children?: string | JSX.Element | JSX.Element[] | (() => JSX.Element);
 };
 
-export type FormSingleProps = {} & PagesProps;
+export type FormSingleProps = PagesProps;
 
-export type FormRightProps = { menuRight: ReactNode; body: ReactNode } & PagesProps;
+export type FormMenuProps = { menuRight: ReactNode } & PagesProps;
 
 export type UiNavigationProps = {
   title: string;
