@@ -1,7 +1,6 @@
 import { Box, Divider, Text } from '@react-bulk/web';
 
-import FormSingle from '../../src/components/FormSingle';
-import UiTitle from '../../src/components/UiTitle';
+import { FormSingle, UiTitle } from '../../src/components';
 
 export default function Page() {
   return (
@@ -9,14 +8,14 @@ export default function Page() {
       <UiTitle title="Bibliotecas Digitais" icon={'Books'} />
       <Box p={3}>
         <Text>
-          A Unyleya Educacional libera aos seus alunos, <Text bold>sem custo adicional</Text>, o acesso às Bibliotecas Digitais, para
+          A UnyXYZ Educacional libera aos seus alunos, <Text bold>sem custo adicional</Text>, o acesso às Bibliotecas Digitais, para
           aprimoramento e desenvolvimento pessoal, além destas colaborarem ao aprendizado dos cursos regulares.
         </Text>
         <Text mt={3}>
           São <Text bold>milhares de títulos que </Text>podem ser acessados por quaisquer dispositivos, de forma fácil e rápida.
         </Text>
 
-        <Text mt={3}>Dúvidas: biblioteca@unyleya.edu.br</Text>
+        <Text mt={3}>Dúvidas: biblioteca@unyxyz.edu.br</Text>
       </Box>
       <Divider mx={3} />
       <Box row p={3}>

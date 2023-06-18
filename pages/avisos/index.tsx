@@ -1,8 +1,7 @@
 import { useTheme } from '@react-bulk/core';
 import { Box, Text } from '@react-bulk/web';
 
-import FormMenu from '../../src/components/FormMenu';
-import UiTitle from '../../src/components/UiTitle';
+import { FormMenu, UiTitle } from '../../src/components';
 
 export default function Page() {
   const theme = useTheme();

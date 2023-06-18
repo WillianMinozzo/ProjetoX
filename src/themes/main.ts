@@ -11,7 +11,7 @@ const main: ThemeEditProps = {
     darker: '#3a0016',
     secondary: '#aa00ff',
     white: '#ffffff',
-  } as any,
+  },
 
   components: { ...components },
 };

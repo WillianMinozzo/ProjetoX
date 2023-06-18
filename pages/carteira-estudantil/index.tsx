@@ -1,7 +1,6 @@
 import { Box, Button, Image } from '@react-bulk/web';
 
-import { UiTitle } from '../../src/components';
-import FormSingle from '../../src/components/FormSingle';
+import { FormSingle, UiTitle } from '../../src/components';
 
 export default function Page() {
   return (
