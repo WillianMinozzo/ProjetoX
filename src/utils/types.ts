@@ -20,5 +20,4 @@ export type UiTitleProps = {
   title: string;
   subtitle?: string;
   icon?: string;
-  divider?: boolean;
 };
